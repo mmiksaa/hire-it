@@ -1,0 +1,60 @@
+@import "../../scss/variables";
+
+
+.tabs {
+  background-color: $second-dark;
+  width: 100%;
+  height: 60px;
+
+  :global {
+    & .ant-tabs-nav-list {
+      display: flex;
+      padding: 18px 0px;
+      margin-left: 42px;
+      position: relative;
+    }
+
+    & .ant-tabs-tab {
+      margin-right: 32px;
+      cursor: pointer;
+    }
+
+    & .ant-tabs-tab-text {
+      margin-left: 12px;
+    }
+
+    & .ant-tabs-tab-text.first {
+      color: #89ddff;
+    }
+
+    & .ant-tabs-tab-text.second {
+      color: $success;
+    }
+
+    & .ant-tabs-tab-text.third {
+      color: $error;
+    }
+
+    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+      background-color: #89ddff;
+      height: 2px;
+      position: absolute;
+      bottom: 7px;
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+:global {
+  .first .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: #89ddff;
+  }
+
+  .second .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: $success;
+  }
+
+  .third .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: $error;
+  }
+}

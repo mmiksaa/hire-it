@@ -1,0 +1,217 @@
+@import '../../scss/variables';
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.task {
+  color: $main-text;
+  margin-top: -10%;
+  animation-name: fade;
+  animation-duration: 1s;
+
+  &__inner {
+    display: flex;
+    width: 990px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 280px;
+  }
+
+  &__btn {
+    background-color: $main-dark;
+    border-radius: 7px;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 22px 0;
+    width: 400px;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      color: #ffffff;
+      background-color: $light-dark;
+    }
+
+    & input {
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    & > span:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      line-height: 1;
+    }
+  }
+
+  &__code {
+    padding: 10px 0 0 15px;
+    width: 560px;
+    border-radius: 7px;
+    margin: 0;
+    height: 280px;
+    font-size: 20px;
+    background-color: $main-dark !important;
+  }
+
+  &__wrapp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__show_spoiler {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 35px;
+    transition: 0.3s color;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__spoiler {
+    background-color: $main-dark;
+    color: $main-text;
+    width: 800px;
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 20px 30px 20px 20px;
+    animation-name: fade;
+    animation-duration: 1s;
+    min-height: 150px;
+    z-index: 2;
+    position: absolute;
+  }
+
+  &__text {
+    z-index: 1;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 19px;
+    background-color: transparent !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 0px !important;
+    padding-right: 15px !important;
+    max-height: 600px;
+
+    & span {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  }
+
+  &__spoiler_title {
+    font-size: 30px;
+    margin: 0 auto;
+    color: $light-gray;
+    width: 100%;
+    margin-bottom: 20px;
+    line-height: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 100px;
+      height: 1px;
+      left: 0;
+      background-color: $light-gray;
+    }
+  }
+
+  &__close {
+    color: $light-gray;
+    font-size: 35px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+    transition: 0.4s color;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__spoiler_wrapp {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+:global {
+  .task__btn {
+    &__disabled {
+      pointer-events: none;
+    }
+
+    &__checked {
+      color: #ffffff;
+      background-color: $light-dark;
+    }
+
+    &__mistake {
+      background-color: $main-dark;
+      border-color: $error;
+      color: $error;
+    }
+
+    &__right {
+      background-color: $main-dark;
+      border-color: $success;
+      color: $success;
+    }
+
+    &__medium {
+      font-size: 19px;
+    }
+
+    &__small {
+      font-size: 15px;
+    }
+  }
+
+  .task__title {
+    &__medium {
+      font-size: 20px !important;
+    }
+  }
+}
